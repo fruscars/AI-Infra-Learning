@@ -1,7 +1,6 @@
 #假设是三层神经网络
 import numpy as np
 import matplotlib.pyplot as plt
-#人工数据集
 
 #神经网络层（对节点分类，即统一又分类）
 # ---------- 线性层节点 ----------
@@ -17,7 +16,7 @@ class Linear:
 
     def forward(self, x):
        #x为层输入，out为层输出
-        self.x = x.copy()          # ★ 存下输入，反向时要用
+        self.x = x.copy()        
         self.out = x @ self.W + self.b   
         return self.out
 
@@ -55,6 +54,7 @@ class Linear:
 
 
 # ---------- sigmoid激活函数 ----------
+#无权重和偏置，只有前向和反向传播
 class Sigmoid:  
     #输入与输出
     def forward(self, x):
